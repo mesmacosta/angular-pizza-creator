@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "build:dev": "NODE_ENV=development webpack-dev-server --inline --hot",
+    "build:dev": "webpack-dev-server --inline --hot",
     "clean": "rimraf build",
     "setup": "webpack --config vendor/webpack.config.js",
     "start": "yarn run build:dev",

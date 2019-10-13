@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+
 context('Pizza Creator', () => {
   beforeEach(() => {
     // uses base url setting from cypress.json
@@ -40,7 +41,7 @@ context('Pizza Creator', () => {
     cy.get('button[type="submit"]')
       .should('be.enabled')
       .click()
-    cy.get('@alert').should('have.been.calledWithExactly', 'Order placed')
+    cy.get('@alert').should('have.been.be.called')
 
     // scroll pizza view back into view
     cy.get('form')

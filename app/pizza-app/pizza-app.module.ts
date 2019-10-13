@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 import { PizzaAppComponent } from './containers/pizza-app/pizza-app.component';
 
@@ -16,7 +17,8 @@ import { PizzaSummaryComponent } from './components/pizza-summary/pizza-summary.
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
   declarations: [
     PizzaAppComponent,
