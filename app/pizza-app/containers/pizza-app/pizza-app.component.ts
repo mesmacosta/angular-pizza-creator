@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { PizzaValidators } from '../../validators/pizza.validator';
+import { Http, Response } from "@angular/http";
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'pizza-app',
@@ -51,7 +54,7 @@ export class PizzaAppComponent implements OnInit {
     ])
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private _http: Http) { }
 
   ngOnInit() {
     this.calculateTotal(this.form.get('pizzas').value);
@@ -91,7 +94,12 @@ export class PizzaAppComponent implements OnInit {
 
   createOrder(order: FormGroup) {
     console.log(order.value);
-    alert('Order placed')
+    this._http.post('https://reqres.in/api/pizzas/order', {})
+      .map(res => res.json()).subscribe(
+        data => alert(`Order placed: ${(<any>data).id}`),
+        error => alert(error),
+        () => console.log("acesso a webapi get ok...")
+      );
   }
 
 }

@@ -5,20 +5,17 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "build:dev": "NODE_ENV=development webpack-dev-server --inline --hot",
+    "build:dev": "webpack-dev-server --inline --hot",
     "clean": "rimraf build",
     "setup": "webpack --config vendor/webpack.config.js",
     "start": "yarn run build:dev",
     "start:production": "yarn run clean && yarn run build",
     "test": "karma start --single-run",
-    "test:watch": "karma start",
-    "cypress:open": "cypress open",
-    "dev": "start-test 3000 cypress:open"
+    "test:watch": "karma start"
   },
   "devDependencies": {
     "@angular/compiler": "4.0.0-rc.3",
     "@angular/compiler-cli": "4.0.0-rc.3",
-    "@percy/cypress": "2.0.1",
     "@types/core-js": "0.9.46",
     "@types/jasmine": "2.8.16",
     "@types/karma": "0.13.36",
@@ -26,7 +23,6 @@
     "@ultimate/aot-loader": "0.1.16",
     "angular2-template-loader": "0.6.2",
     "awesome-typescript-loader": "3.5.0",
-    "cypress": "3.4.1",
     "file-loader": "0.10.1",
     "html-loader": "0.4.5",
     "jasmine-core": "2.5.2",
