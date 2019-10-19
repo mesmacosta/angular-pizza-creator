@@ -22,14 +22,6 @@ yarn setup
 yarn start
 ```
 
-## Develop
-
-Interested in changing code? Check out [DEVELOPMENT.md](DEVELOPMENT.md)
-
-[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
-[renovate-app]: https://renovateapp.com/
-
-
 
 
 
